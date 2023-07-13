@@ -1,0 +1,25 @@
+{
+  "name": "twentyss",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "razorpay-vue": "^0.0.4",
+    "sweetalert2": "^11.7.12",
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.1",
+    "vuex": "^4.1.0",
+    "vuex-router-sync": "^6.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "vite": "^4.3.2"
+  }
+}
