@@ -20,7 +20,7 @@ export default {
 	},
 	methods: {
 		async PostRegister() {
-			await axios.post('http://localhost:4820/data/Api/RegisterUser', this.RegisterDetails)
+			await axios.post('RegisterUser', this.RegisterDetails)
 				.then((data) => {
 					this.alerts = data.data.msg
 					if (data.data.status) {
