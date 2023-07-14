@@ -50,9 +50,9 @@ export default {
 <template>
     <main class="col-lg-6" >
         <div class="ps-lg-3">
-            <h4 class="title text-dark">
+            <h1 class="title text-dark">
                 {{ product.pName }}
-            </h4>
+            </h1>
             <div class=" my-2">
                 <span class="text-muted"><i class="fa fa-shopping-basket fa-sm mx-1"></i></span>
                 <span class="text-success">In stock</span>

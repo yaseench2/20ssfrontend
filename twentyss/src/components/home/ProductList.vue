@@ -129,6 +129,6 @@ export default {
     margin-left: 3px;
 }
 .section-title{
-  margin-left: 30%;
+  margin-left: 25%;
 }
 </style>

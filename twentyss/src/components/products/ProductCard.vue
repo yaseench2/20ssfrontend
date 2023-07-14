@@ -16,9 +16,12 @@ export default {
                     <img :src="x.imageUrl" alt="" height="100" id="shirt">
                 </div>
             </router-link>
-            <div class="text-muted text-center mt-auto">{{ x.size }}</div>
+            <div>
+                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in x.size" :key="size">{{ size }}</div>
+            </div>
+            
             <div class="card-body pt-0">
-                <div class="text-muted text-center mt-auto">Item:{{ x.pitem }}</div>
+                <div class="text-dark text-center mt-auto">Item:{{ x.pitem }}</div>
                 <div class="text-muted text-center discrption mt-auto">Disciption:{{ x.disc }}</div>
                 <div class="d-flex align-items-center price">
                     <div class="del mr-2"><span class="text-danger"><del>{{ x.cutPrice }}</del></span></div>

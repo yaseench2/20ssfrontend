@@ -324,10 +324,9 @@ export default {
   }
 
   .sidebar {
-    top: 7%;
-    border-radius: 20px;
-    margin-left: 3px;
-    width: 15%;
+    top: 5%;
+    border-radius: 0px 20px;
+    width: 13%;
   }
 
   i {

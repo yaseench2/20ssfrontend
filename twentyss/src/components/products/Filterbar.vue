@@ -1,169 +1,42 @@
 <script>
 export default {
     name: 'Filterbar',
+    data() {
+        return {
+            Itemurl: {}
+        }
+    },
+    async created() {
+        let prevUrl = undefined;
+        setInterval(async () => {
+            const currUrl = window.location.pathname;
+            if (currUrl != prevUrl) {
+                prevUrl = currUrl;
+                let newUrlitem = currUrl.slice(4);
+                this.Itemurl = newUrlitem
+            }
+        }, 60);
+    },
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var filterBtn = document.getElementById('filter-btn');
-    var btnTxt = document.getElementById('btn-txt');
-    var filterAngle = document.getElementById('filter-angle');
-
-    $('#filterbar').collapse(false);
-    var count = 0, count2 = 0;
-    function changeBtnTxt() {
-        $('#filterbar').collapse(true);
-        count++;
-        if (count % 2 != 0) {
-            filterAngle.classList.add("fa-angle-right");
-            btnTxt.innerText = "show filters"
-            filterBtn.style.backgroundColor = "#36a31b";
-        }
-        else {
-            filterAngle.classList.remove("fa-angle-right")
-            btnTxt.innerText = "hide filters"
-            filterBtn.style.backgroundColor = "#ff935d";
-        }
-
-    }
-
-    // For Applying Filters
-    $('#inner-box').collapse(false);
-    $('#inner-box2').collapse(false);
-
-    // For changing NavBar-Toggler-Icon
-    var icon = document.getElementById('icon');
-
-    function chnageIcon() {
-        count2++;
-        if (count2 % 2 != 0) {
-            icon.innerText = "";
-            icon.innerHTML = '<span class="fa fa-times-circle" style="width:100%"></span>';
-            icon.style.paddingTop = "5px";
-            icon.style.paddingBottom = "5px";
-            icon.style.fontSize = "1.8rem";
-
-
-        }
-        else {
-            icon.innerText = "";
-            icon.innerHTML = '<span class="navbar-toggler-icon"></span>';
-            icon.style.paddingTop = "5px";
-            icon.style.paddingBottom = "5px";
-            icon.style.fontSize = "1.2rem";
-        }
-    }
-
-    // Showing tooltip for AVAILABLE COLORS
     $(function () {
         $('[data-tooltip="tooltip"]').tooltip()
     })
-
-    // For Range Sliders
-    var inputLeft = document.getElementById("input-left");
-    var inputRight = document.getElementById("input-right");
-
-    var thumbLeft = document.querySelector(".slider > .thumb.left");
-    var thumbRight = document.querySelector(".slider > .thumb.right");
-    var range = document.querySelector(".slider > .range");
-
-    var amountLeft = document.getElementById('amount-left')
-    var amountRight = document.getElementById('amount-right')
-
-    function setLeftValue() {
-        var _this = inputLeft,
-            min = parseInt(_this.min),
-            max = parseInt(_this.max);
-
-        _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
-
-        var percent = ((_this.value - min) / (max - min)) * 100;
-
-        thumbLeft.style.left = percent + "%";
-        range.style.left = percent + "%";
-        amountLeft.innerText = parseInt(percent * 100);
-    }
-    setLeftValue();
-
-    function setRightValue() {
-        var _this = inputRight,
-            min = parseInt(_this.min),
-            max = parseInt(_this.max);
-
-        _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
-
-        var percent = ((_this.value - min) / (max - min)) * 100;
-
-        amountRight.innerText = parseInt(percent * 100);
-        thumbRight.style.right = (100 - percent) + "%";
-        range.style.right = (100 - percent) + "%";
-    }
-    setRightValue();
-
-    inputLeft.addEventListener("input", setLeftValue);
-    inputRight.addEventListener("input", setRightValue);
-
-    inputLeft.addEventListener("mouseover", function () {
-        thumbLeft.classList.add("hover");
-    });
-    inputLeft.addEventListener("mouseout", function () {
-        thumbLeft.classList.remove("hover");
-    });
-    inputLeft.addEventListener("mousedown", function () {
-        thumbLeft.classList.add("active");
-    });
-    inputLeft.addEventListener("mouseup", function () {
-        thumbLeft.classList.remove("active");
-    });
-
-    inputRight.addEventListener("mouseover", function () {
-        thumbRight.classList.add("hover");
-    });
-    inputRight.addEventListener("mouseout", function () {
-        thumbRight.classList.remove("hover");
-    });
-    inputRight.addEventListener("mousedown", function () {
-        thumbRight.classList.add("active");
-    });
-    inputRight.addEventListener("mouseup", function () {
-        thumbRight.classList.remove("active");
-    });
 })
 </script>
 <template>
-    <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header"> <button
-            class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
-            aria-expanded="false" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()"> <span
-                class="fa fa-angle-left" id="filter-angle"></span> <span id="btn-txt">Hide filters</span> </button>
-        <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto"> <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false"
-                aria-label="Toggle navigation" onclick="chnageIcon()" id="icon"> <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mynav">
-                <ul class="navbar-nav d-lg-flex align-items-lg-center">
-                    <li class="nav-item active"> <select name="sort" id="sort">
-                            <option value="" hidden selected>Sort by</option>
-                            <option value="price">Price</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="rating">Rating</option>
-                        </select> </li>
-                    <li class="nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3">
-                        <div class="d-inline-flex align-items-center mx-lg-2" id="select2">
-                            <div class="pl-2">Products:</div> <select name="pro" id="pro">
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                        <div class="font-weight-bold mx-2 result">18 from 200</div>
-                    </li>
-                    <li class="nav-item d-lg-none d-inline-flex"> </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
+        <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
+            aria-expanded="false" aria-controls="filterbar" id="filter-btn" >
+            <span class="fa fa-angle-left" id="filter-angle"></span>
+            <span id="btn-txt">filters</span>
+        </button>
         <div class="ml-auto mt-3 mr-2">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-              </ul>
+                    <h4 class="text-success">{{ Itemurl }}</h4>
+                </ul>
             </nav>
         </div>
     </div>
@@ -183,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Outerwear <button class="btn ml-auto"
                         type="button" data-toggle="collapse" data-target="#inner-box" aria-expanded="false"
-                        aria-controls="inner-box" id="out" onclick="outerFilter()"> <span class="fa fa-plus"></span>
+                        aria-controls="inner-box" id="out" > <span class="fa fa-plus"></span>
                     </button> </div>
                 <div id="inner-box" class="collapse mt-2 mr-1">
                     <div class="my-1"> <label class="tick">Windbreaker <input type="checkbox" checked="checked">
@@ -238,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mt-2">
-                        <div> <span id="amount-left" class="font-weight-bold"></span> uah </div>
-                        <div> <span id="amount-right" class="font-weight-bold"></span> uah </div>
+                        <div> <span id="amount-left" class="font-weight-bold"></span> Rs </div>
+                        <div> <span id="amount-right" class="font-weight-bold"></span> Rs </div>
                     </div>
                 </div>
             </div>
@@ -269,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
     width: 100%;
     height: 60px;
 }
-
-
 
 button.btn.btn-hide {
     height: inherit;
@@ -627,6 +498,7 @@ input[type=range]::-webkit-slider-thumb {
         width: 28%
     }
 }
+
 @media(max-width: 991.5px) {
     .navbar-nav {
         position: absolute;
@@ -662,11 +534,13 @@ input[type=range]::-webkit-slider-thumb {
         color: #fff
     }
 }
+
 @media(max-width: 767.5px) {
     #filterbar {
         width: 50%
     }
 }
+
 @media(max-width: 525.5px) {
     #filterbar {
         float: none;
@@ -684,6 +558,4 @@ input[type=range]::-webkit-slider-thumb {
     .col-md-6 {
         padding-left: 0
     }
-}
-
-</style>
+}</style>

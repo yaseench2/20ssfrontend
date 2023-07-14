@@ -17,9 +17,17 @@ export default {
     CartGrid, Coupon, NotFoundErr
   },
   async created() {
-    const result = await axios.get(`cart/user/${this.$route.params.userId}`)
-    const product = result.data
-    this.cartItems = product
+    let user = this.$store.state.user
+    if (user) {
+      const result = await axios.get(`cart/user/${this.$route.params.userId}`)
+      const product = result.data
+      this.cartItems = product
+    } else {
+      Swal.fire('warning!', 'Please donot refresh after Login !', 'warning');
+      setTimeout(() => {
+        this.$router.push('/')
+      }, 1000);
+    }
   },
   computed: {
     totalPrice() {
@@ -40,17 +48,17 @@ export default {
           this.cartItems = product.cartItems
           Swal.fire('Success!', this.alerts, 'success');
         } else {
-          Swal.fire('Warning!', 'Could not connect server', 'warining');
+          Swal.fire('Warning!', 'Could not connect server', 'warning');
         }
       }
     },
-    async CreateOrder(){
-      let user=this.$store.state.user
-      if(!user){
-        Swal.fire('Warning!', 'You Are Not Logged In', 'warining');
-      }else{
+    async CreateOrder() {
+      let user = this.$store.state.user
+      if (!user) {
+        Swal.fire('Warning!', 'You Are Not Logged In', 'warning');
+      } else {
         // let {data:CreatedOrder} =await axios.post('createOrder')
-        Swal.fire('Warning!', 'Technical error', 'warining');
+        Swal.fire('Warning!', 'Technical error', 'warning');
       }
     }
   }
@@ -87,7 +95,7 @@ export default {
                 <p class="mb-2 fw-bold">RS:- {{ totalPrice }} </p>
               </div>
               <div class="mt-3">
-                <a  class="btn btn-success w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a>
+                <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a>
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>
             </div>
