@@ -1,2 +1,2 @@
 import axios from "axios";
-axios.defaults.baseURL='https://two0ssserver-come.onrender.com/';
+axios.defaults.baseURL='https://20ss.ap-1.evennode.com/';
