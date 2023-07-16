@@ -1,29 +1,12 @@
 <script>
 export default {
     name: 'Filterbar',
-    data() {
-        return {
-            Itemurl: {}
-        }
-    },
-    async created() {
-        let prevUrl = undefined;
-        setInterval(async () => {
-            const currUrl = window.location.pathname;
-            if (currUrl != prevUrl) {
-                prevUrl = currUrl;
-                let newUrlitem = currUrl.slice(4);
-                this.Itemurl = newUrlitem
-            }
-        }, 60);
-    },
+    props:['ItemUrl'],
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    $(function () {
-        $('[data-tooltip="tooltip"]').tooltip()
-    })
-})
+let tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
+    tooltips.forEach(function(tooltip) {
+        new bootstrap.Tooltip(tooltip);
+    });
 </script>
 <template>
     <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
@@ -35,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="ml-auto mt-3 mr-2">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <h4 class="text-success">{{ Itemurl }}</h4>
+                    <h4 class="text-success">{{ ItemUrl }}</h4>
                 </ul>
             </nav>
         </div>

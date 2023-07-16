@@ -1,14 +1,14 @@
 <script>
 export default {
     name: 'ProductCard',
-    props: ['products'],
+    props: ['products', 'ItemUrl'],
 }
 </script>
 
 <template>
-    <div class="col-lg-4 col-md-4 col-6  pt-md-0 pt-3 mb-3" v-for="x in products" :key="x.id">
-        <div class="card d-flex flex-column align-items-center">
-            <div class="product-name mt-1">
+    <div class="col-lg-4 col-md-4 col-6  pt-md-0  mb-3" v-for="x in products" :key="x.id" >
+        <div class="card d-flex flex-column align-items-center" >
+            <div class="product-name mt-1"  >
                 <h6>{{ x.pName }}</h6>
             </div>
             <router-link :to="'/product_details/' + x.id + '/' + x.pName">
@@ -17,9 +17,9 @@ export default {
                 </div>
             </router-link>
             <div>
-                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in x.size" :key="size">{{ size }}</div>
+                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in x.size" :key="size">{{ size}}</div>
             </div>
-            
+
             <div class="card-body pt-0">
                 <div class="text-dark text-center mt-auto">Item:{{ x.pitem }}</div>
                 <div class="text-muted text-center discrption mt-auto">Disciption:{{ x.disc }}</div>
@@ -170,7 +170,9 @@ export default {
     .price {
         font-size: 0.85rem
     }
-    .discrption{
+
+    .discrption {
         display: none;
     }
-}</style>
+}
+</style>
