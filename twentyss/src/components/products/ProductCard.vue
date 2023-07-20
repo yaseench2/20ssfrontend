@@ -6,9 +6,9 @@ export default {
 </script>
 
 <template>
-    <div class="col-lg-4 col-md-4 col-6  pt-md-0  mb-3" v-for="x in products" :key="x.id" >
+    <div class="col-lg-4 col-md-4 col-6 mb-3" v-for="x in products" :key="x.id" >
         <div class="card d-flex flex-column align-items-center" >
-            <div class="product-name mt-1"  >
+            <div class="product-name mt-1" >
                 <h6>{{ x.pName }}</h6>
             </div>
             <router-link :to="'/product_details/' + x.id + '/' + x.pName">
@@ -19,7 +19,6 @@ export default {
             <div>
                 Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in x.size" :key="size">{{ size}}</div>
             </div>
-
             <div class="card-body pt-0">
                 <div class="text-dark text-center mt-auto">Item:{{ x.pitem }}</div>
                 <div class="text-muted text-center discrption mt-auto">Disciption:{{ x.disc }}</div>
@@ -37,7 +36,8 @@ export default {
     cursor: pointer;
     transition: .3s all ease-in-out;
     height: 350px;
-    border-radius: 20px;
+    width: auto;
+    border-radius: 10px;
 }
 
 .card:hover {
@@ -46,12 +46,9 @@ export default {
 }
 
 .card .product-name {
-    font-weight: 800
+    font-weight: 500
 }
 
-.card-body {
-    padding-bottom: 0
-}
 
 .card .text-muted {
     font-size: 0.82rem
@@ -148,7 +145,8 @@ export default {
 
 @media(max-width:1199.5px) {
     .card {
-        height: 350px
+        height: 350px;
+        width:100%;
     }
 
     .price {
@@ -164,7 +162,7 @@ export default {
     .card {
         text-align: center;
         height: 300px;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     .price {

@@ -45,7 +45,7 @@ export default {
     <div class="container mt-4">
         <Filterbar :ItemUrl="Itemurl" />
         <div id="products">
-            <div class="row mx-0">
+            <div class="row">
                 <div class="container mb-3">
                     <div class="col-md-12">
                         <form class="form">
@@ -71,6 +71,7 @@ export default {
     .wariningSearch {
         margin-left:    20%;
     }
+
 }
 
 .form {
