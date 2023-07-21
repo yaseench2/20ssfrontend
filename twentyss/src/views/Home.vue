@@ -7,7 +7,8 @@
     :Dresses="ProductsDresses"
     :Gadgets="ProductsGadgets"
     :Watches="ProductsWatches"
-    :Sneakers="ProductsSneakers" />
+    :Sneakers="ProductsSneakers"
+    :banner="Banner" />
 </template>
 
 <script>
@@ -17,7 +18,7 @@ import ProductList from '../components/home/ProductList.vue'
 
 export default {
     name: 'Home',
-    props: ['products', 'Dresses','Gadgets','Watches','Sneakers'],
+    props: ['products', 'Dresses','Gadgets','Watches','Sneakers','banner'],
     components: {
         Welcome, ProductList
     },
@@ -27,7 +28,8 @@ export default {
             ProductsDresses: [],
             ProductsGadgets: [],
             ProductsWatches: [],
-            ProductsSneakers: []
+            ProductsSneakers: [],
+            Banner:[],
         }
     },
 
@@ -51,6 +53,10 @@ export default {
         const resultSneakers = await axios.get('Sneakers')
         const ProductsSneakers = resultSneakers.data
         this.ProductsSneakers = ProductsSneakers
+
+        const resultBanner = await axios.get('banner')
+        const Banner = result.data
+        this.Banner = Banner
     },
 }
 </script>

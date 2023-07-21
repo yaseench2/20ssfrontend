@@ -6,7 +6,7 @@ import Sneakers from './Sneakers.vue'
 import Watches from './Watches.vue'
 export default {
   name: 'ProductList',
-  props: ['products','Dresses','product','Gadgets','Watches','Sneakers'],  
+  props: ['products','Dresses','product','Gadgets','Watches','Sneakers','bannerImage'],  
   components: {
     Gadgets, Dress, Banner, Sneakers, Watches
   },
@@ -58,7 +58,7 @@ export default {
     </div>
   </div>
 
-  <Banner/>
+  <Banner v-for="i in banner" :key="i.id" :bannerImage="banner"/>
 
   <div class="row pt-3">
       <div class="col-md-6 col-7">

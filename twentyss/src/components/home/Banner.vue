@@ -1,6 +1,7 @@
 <script>
 export default {
     name: 'Banner',
+    props:['bannerImages']
 }
 </script>
 
@@ -11,7 +12,7 @@ export default {
                 <h2>Best Sales</h2>
             </div>
             <div class="content">
-                <a href=""><img src="/banner1.jpg" alt=""></a>
+                <a href=""><img :src="i.imageUrl" alt=""></a>
             </div>
         </div>
     </div>
