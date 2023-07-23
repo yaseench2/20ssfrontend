@@ -58,7 +58,7 @@ export default {
     </div>
   </div>
 
-  <Banner v-for="bannerImage in banner" :key="bannerImage.id" :bannerImage="banner"/>
+  <Banner v-for="bannerImage in banner" :key="bannerImage.id" :bannerImage="bannerImage"/>
 
   <div class="row pt-3">
       <div class="col-md-6 col-7">
