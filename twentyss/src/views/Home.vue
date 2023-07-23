@@ -55,8 +55,9 @@ export default {
         this.ProductsSneakers = ProductsSneakers
 
         const resultBanner = await axios.get('banner')
-        const Banner = result.data
+        const Banner = resultBanner.data
         this.Banner = Banner
+
     },
 }
 </script>

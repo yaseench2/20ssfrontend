@@ -6,7 +6,7 @@ import Sneakers from './Sneakers.vue'
 import Watches from './Watches.vue'
 export default {
   name: 'ProductList',
-  props: ['products','Dresses','product','Gadgets','Watches','Sneakers','bannerImage'],  
+  props: ['products','Dresses','product','Gadgets','Watches','Sneakers','banner','bannerImage'],  
   components: {
     Gadgets, Dress, Banner, Sneakers, Watches
   },
