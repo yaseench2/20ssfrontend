@@ -44,7 +44,7 @@ export default{
                 </select>
             </div>
             <div class="col-md-6 col-6 text-center">
-                <text class="h4 text-dark ml-2">Price Rs:- {{ x.price }}</text> <br />
+                <text class="h4 text-dark ml-2">Rs:- {{ x.price }}</text> <br />
                 <small class="text-mute text-nowrap ml-2">Rs:- <del class="text-danger">{{ x.cutPrice }}</del></small>
             </div>
         </div>
