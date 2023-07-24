@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-    <div class="banner">
+    <div class="banner mb-3">
         <div class="">
             <div class="section-title text-light text-center pt-5">
                 <h2>Best Sales</h2>
