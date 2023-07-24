@@ -12,7 +12,7 @@ export default{
                     <label class="form-label">Have coupon?</label>
                     <div class="input-group">
                         <input type="text" class="form-control border" name="" placeholder="Coupon code" />
-                        <button class="btn btn-light border">Apply</button>
+                        <button type="button" class="btn btn-light border">Apply</button>
                     </div>
                 </div>
             </form>

@@ -84,7 +84,7 @@ export default {
             <hr />
 
             <div class="row mb-4">
-                <div class="col-md-4 col-6">
+                <div class="col-md-4 col-6" v-if="product.pitem != 'Watch' && product.pitem != 'Gadgets'">
                     <label class="mb-2">Size</label>
                     <select class="form-select border border-secondary" style="height: 35px;" >
                         <option v-for="size in product.size" :key="size">{{ size }}</option>
