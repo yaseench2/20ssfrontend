@@ -24,6 +24,7 @@ export default {
       this.cartItems = product
     } else {
       Swal.fire('warning!', 'Please donot refresh after Login !', 'warning');
+      await axios.post('LogoutUser')
       setTimeout(() => {
         this.$router.push('/')
       }, 1000);
@@ -95,7 +96,8 @@ export default {
                 <p class="mb-2 fw-bold">RS:- {{ totalPrice }} </p>
               </div>
               <div class="mt-3">
-                <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a>
+                <!-- <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a> -->
+                <a class="btn btn-warning w-100 shadow-0 mb-2" href="https://wa.me/message/YBNVGLOCOPMYF1">Purchase in whastapp </a>
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>
             </div>

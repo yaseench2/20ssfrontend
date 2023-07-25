@@ -22,6 +22,9 @@ export default {
 </template>
 
 <style scoped>
+.wrapper{
+  border-radius: 12px;
+}
 img {
   object-position: center;
   object-fit: cover;
@@ -53,6 +56,7 @@ h1 {
 }
 
 .outline {
+  border-radius: 12px;
   background: transparent;
   color: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(0, 212, 255, 0.6);

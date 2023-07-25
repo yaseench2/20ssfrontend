@@ -35,8 +35,9 @@ export default {
         let user = this.$store.state.user
         if (user) {
             let userId = this.$store.state.user.id
-            const { data: cartItems } = await axios.get(`cart/user/${userId}`)
-            this.cartItem = cartItems
+            const result = await axios.get(`cart/user/${userId}`)
+            const product = result.data
+            this.cartItem = product
         }
     },
     computed: {
@@ -48,7 +49,7 @@ export default {
 </script>
 
 <template>
-    <main class="col-lg-6" >
+    <main class="col-lg-6">
         <div class="ps-lg-3">
             <h1 class="title text-dark">
                 {{ product.pName }}
@@ -86,7 +87,7 @@ export default {
             <div class="row mb-4">
                 <div class="col-md-4 col-6" v-if="product.pitem != 'Watch' && product.pitem != 'Gadgets'">
                     <label class="mb-2">Size</label>
-                    <select class="form-select border border-secondary" style="height: 35px;" >
+                    <select class="form-select border border-secondary" style="height: 35px;">
                         <option v-for="size in product.size" :key="size">{{ size }}</option>
                     </select>
                 </div>
@@ -123,4 +124,5 @@ export default {
     dt {
         text-align: right;
     }
-}</style>
+}
+</style>

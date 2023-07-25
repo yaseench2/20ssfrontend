@@ -6,25 +6,25 @@ export default {
 </script>
 
 <template>
-    <div class="col-lg-4 col-md-4 col-6 mb-3" v-for="x in products" :key="x.id" >
+    <div class="col-lg-4 col-md-4 col-6 mb-3" v-for="product in products" :key="product.id" >
         <div class="card d-flex flex-column align-items-center" >
             <div class="product-name mt-1" >
-                <h6>{{ x.pName }}</h6>
+                <h5>{{ product.pName }}</h5>
             </div>
-            <router-link :to="'/product_details/' + x.id + '/' + x.pName">
+            <router-link :to="'/product_details/' + product.id + '/' + product.pName">
                 <div class="card-img">
-                    <img :src="x.imageUrl" alt="" height="100" id="shirt">
+                    <img :src="product.imageUrl" alt="" height="100" id="shirt">
                 </div>
             </router-link>
-            <div>
-                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in x.size" :key="size">{{ size}}</div>
+            <div v-if="product.pitem != 'Watch' && product.pitem != 'Gadgets'">
+                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in product.size" :key="size">{{ size}}</div>
             </div>
             <div class="card-body pt-0">
-                <div class="text-dark text-center mt-auto">Item:{{ x.pitem }}</div>
-                <div class="text-muted text-center discrption mt-auto">Disciption:{{ x.disc }}</div>
+                <div class="text-dark text-center mt-auto">Item:{{ product.pitem }}</div>
+                <div class="text-muted text-center discrption mt-auto">Disciption:{{ product.disc }}</div>
                 <div class="d-flex align-items-center price">
-                    <div class="del mr-2"><span class="text-danger"><del>{{ x.cutPrice }}</del></span></div>
-                    <div class="font-weight-bold">{{ x.price }}</div>
+                    <div class="del mr-2"><span class="text-danger"><del>{{ product.cutPrice }}</del></span></div>
+                    <div class="font-weight-bold">{{ product.price }}</div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@ export default {
 .card {
     cursor: pointer;
     transition: .3s all ease-in-out;
-    height: 350px;
+    height: auto;
     width: auto;
     border-radius: 10px;
 }
@@ -145,7 +145,7 @@ export default {
 
 @media(max-width:1199.5px) {
     .card {
-        height: 350px;
+        height: auto;
         width:100%;
     }
 
@@ -161,7 +161,7 @@ export default {
 @media(max-width: 991.5px) {
     .card {
         text-align: center;
-        height: 300px;
+        height: auto;
         border-radius: 10px;
     }
 

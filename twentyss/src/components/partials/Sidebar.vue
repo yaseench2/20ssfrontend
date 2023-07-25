@@ -1,46 +1,52 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import {useStore} from 'vuex'
+import { useStore } from 'vuex'
 export default {
   name: "Sidebar",
   data() {
     return {
       alert: {},
-      userId:{},
+      userId: {},
     }
   },
   methods: {
     async LogoutUser() {
-      await axios.post('LogoutUser')
-        .then((data) => {
-          this.alerts = data.data.msg
-          if (data.data.status) {
-            this.$store.dispatch('setUntoken')
-            Swal.fire('Success!', this.alerts, 'success');
+      let user = this.$store.state.user
+      if (user) {
+        await axios.post('LogoutUser')
+          .then((data) => {
+            this.alerts = data.data.msg
+            if (data.data.status) {
+              this.$store.dispatch('setUntoken')
+              Swal.fire('Success!', this.alerts, 'success');
+              setTimeout(() => {
+                this.$router.push('/login');
+              }, 1000);
+            } else {
+              Swal.fire('warning!', this.alerts, 'warning');
+              setTimeout(() => {
+                this.$router.push('/');
+              }, 1000);
+            }
+          }).catch((e) => {
+            Swal.fire('Error!', 'Couid not connect server', 'error');
             setTimeout(() => {
               this.$router.push('/login');
             }, 1000);
-          } else {
-            Swal.fire('warning!', this.alerts, 'warning');
-            setTimeout(() => {
-              this.$router.push('/');
-            }, 1000);
-          }
-        }).catch((e) => {
-          Swal.fire('Error!', 'Couid not connect server', 'error');
-          setTimeout(() => {
-            this.$router.push('/login');
-          }, 1000);
-        })
+          })
+      } else {
+        Swal.fire('Warning!', 'Not Logged In', 'warning');
+      }
+
     },
-    async UserCart(){
-      let user=this.$store.state.user
-      if(user){
-        let userId=this.$store.state.user.id
-        this.$router.push({path:`/cart/user/${userId}`})
-        user=""
-      }else{
+    async UserCart() {
+      let user = this.$store.state.user
+      if (user) {
+        let userId = this.$store.state.user.id
+        this.$router.push({ path: `/cart/user/${userId}` })
+        user = ""
+      } else {
         Swal.fire('warning!', 'You are Not Logged In !', 'warning');
       }
     }
@@ -99,11 +105,14 @@ export default {
       <li><a href="#"><i class="fa fa-truck"></i> <span>Delivery Tracking</span></a></li>
 
       <li class="sidebar-header">Join</li>
-      
-        <li v-if="!$store.state.isLoggedIn"><router-link to="/register" id="register"><i class="fa fa-sign-in"></i><span>Register</span></router-link></li>
-        <li v-if="!$store.state.isLoggedIn"><router-link to="/login" id="login"><i class="fa fa-sign-out"></i> <span>Log In</span></router-link></li>
-      
-      <li><router-link to="" id="logout" @click="LogoutUser()"><i class="fa fa-power-off"></i> <span>LogOut</span></router-link></li>
+
+      <li v-if="!$store.state.isLoggedIn"><router-link to="/register" id="register"><i
+            class="fa fa-sign-in"></i><span>Register</span></router-link></li>
+      <li v-if="!$store.state.isLoggedIn"><router-link to="/login" id="login"><i class="fa fa-sign-out"></i> <span>Log
+            In</span></router-link></li>
+
+      <li><router-link to="" id="logout" @click="LogoutUser()"><i class="fa fa-power-off"></i>
+          <span>LogOut</span></router-link></li>
     </ul>
   </section>
 </template>
@@ -316,7 +325,7 @@ export default {
   span {
     display: none;
   }
-  
+
 
   .sidebar-menu>li .label,
   .sidebar-menu>li .badge {
@@ -332,5 +341,4 @@ export default {
   i {
     color: rgb(255, 255, 255);
   }
-}
-</style>
+}</style>
