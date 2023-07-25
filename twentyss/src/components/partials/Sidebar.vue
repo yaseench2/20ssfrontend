@@ -36,7 +36,7 @@ export default {
             }, 1000);
           })
       } else {
-        Swal.fire('Warning!', 'Not Logged In', 'warning');
+        Swal.fire('Warning!', 'You are Not Logged In', 'warning');
       }
 
     },

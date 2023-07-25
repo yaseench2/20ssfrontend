@@ -58,8 +58,26 @@ export default {
       if (!user) {
         Swal.fire('Warning!', 'You Are Not Logged In', 'warning');
       } else {
-        // let {data:CreatedOrder} =await axios.post('createOrder')
-        Swal.fire('Warning!', 'Technical error', 'warning');
+        const options = {
+          key: 'rzp_test_aKxXbow3dV5kaK',
+          amount: this.totalPrice * 100, // Amount in paise (e.g., 10000 paise = INR 100)
+          currency: 'INR',
+          name: 'twentyss',
+          description: 'Payment for Purchase',
+          image: '/logo.png', // URL of your logo
+          order_id: 1, // Unique order ID generated from your server
+          handler: function (response) {
+            // Handle the payment success response here
+            console.log(response);
+          },
+          prefill: {
+            name: this.$store.state.user.username,
+            email: this.$store.state.user.email,
+            contact: this.$store.state.user.contactNum,
+          },
+        }
+        const razorpay = new window.Razorpay(options);
+        razorpay.open();
       }
     }
   }
@@ -96,8 +114,8 @@ export default {
                 <p class="mb-2 fw-bold">RS:- {{ totalPrice }} </p>
               </div>
               <div class="mt-3">
-                <!-- <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a> -->
-                <a class="btn btn-warning w-100 shadow-0 mb-2" href="https://wa.me/message/YBNVGLOCOPMYF1">Purchase in whastapp </a>
+                <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a>
+                <!-- <a class="btn btn-warning w-100 shadow-0 mb-2" href="https://wa.me/message/YBNVGLOCOPMYF1">Purchase inwhastapp </a> -->
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>
             </div>

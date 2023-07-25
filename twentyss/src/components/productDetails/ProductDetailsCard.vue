@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useMeta } from 'vue-meta';
 export default {
     name: 'ProductDetailsCard',
     props: ['product'],
@@ -29,6 +30,27 @@ export default {
             } else {
                 Swal.fire('warning!', 'You are Not Logged In !', 'warning');
             }
+        },
+        setup() {
+            const meta = useMeta();
+            meta.value.title = this.product.pName;
+            meta.value.metaTags.push({
+                property: 'og:title',
+                content: this.product.pName,
+            });
+            meta.value.metaTags.push({
+                property: 'og:description',
+                content: this.product.disc,
+            });
+            meta.value.metaTags.push({
+                property: 'og:image',
+                content: this.product.imageUrl,
+            });
+            meta.value.metaTags.push({
+                property: 'og:url',
+                content: window.location.href, // or provide a dynamic URL to the product page
+            });
+            setup()
         }
     },
     async created() {
@@ -39,6 +61,7 @@ export default {
             const product = result.data
             this.cartItem = product
         }
+
     },
     computed: {
         itemInCart() {
