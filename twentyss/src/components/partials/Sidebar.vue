@@ -12,8 +12,6 @@ export default {
   },
   methods: {
     async LogoutUser() {
-      let user = this.$store.state.user
-      if (user) {
         await axios.post('LogoutUser')
           .then((data) => {
             this.alerts = data.data.msg
@@ -35,16 +33,12 @@ export default {
               this.$router.push('/login');
             }, 1000);
           })
-      } else {
-        Swal.fire('Warning!', 'You are Not Logged In', 'warning');
-      }
-
     },
     async UserCart() {
       let user = this.$store.state.user
       if (user) {
         let userId = this.$store.state.user.id
-        this.$router.push({ path: `/cart/user/${userId}` })
+        this.$router.push(`/cart/user/${userId}`)
         user = ""
       } else {
         Swal.fire('warning!', 'You are Not Logged In !', 'warning');

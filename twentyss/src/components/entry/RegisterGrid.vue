@@ -63,14 +63,14 @@ export default {
 					</div>
 					<div class="row">
 						<p class="text-danger">Never forget your Username and Password</p>
-						<form class="form-group" @submit.prevent="PostRegister">
+						<form class="form-group" @submit.prevent="PostRegister" autocomplete="off">
 							<div class="row">
 								<div class="col-md-6 col-12">
 									<input type="text" name="username" v-model="RegisterDetails.username" id="username"
 										class="form__input" placeholder="Username" required>
 								</div>
 								<div class="col-md-6 col-12">
-									<input type="text" name="email" v-model="RegisterDetails.email" id="email"
+									<input type="email" name="email" v-model="RegisterDetails.email" id="email"
 										class="form__input" placeholder="email" required>
 								</div>
 							</div>
@@ -97,7 +97,7 @@ export default {
 							<div class="row">
 								<!-- <span class="fa fa-lock"></span> -->
 								<input type="password" name="password" v-model="RegisterDetails.password" id="password"
-									class="form__input" placeholder="Password" required>
+									class="form__input" placeholder="Password" autocomplete="new-password" required>
 							</div>
 							<div class="row">
 								<div class="col-md-6 col-12">

@@ -11,6 +11,16 @@ export default {
     return {
       alerts: {},
       cartItems: [],
+      userData:{},
+      Purchase_Details: {
+        user_Id: "",
+        product_Data: [],
+        whatsappNo:"",
+        email:"",
+        username:"",
+        place:"",
+        pincode:"",
+      },
     }
   },
   components: {
@@ -22,7 +32,16 @@ export default {
       const result = await axios.get(`cart/user/${this.$route.params.userId}`)
       const product = result.data
       this.cartItems = product
+      this.userData=user
+      this.Purchase_Details.user_Id=this.userData.id
+      this.Purchase_Details.product_Data=this.cartItems
+      this.Purchase_Details.whatsappNo=this.userData.contactNum
+      this.Purchase_Details.email=this.userData.email
+      this.Purchase_Details.username=this.userData.username
+      this.Purchase_Details.pincode=this.userData.pinCode
+      this.Purchase_Details.place=this.userData.place
     } else {
+      this.userData=""
       Swal.fire('warning!', 'Please donot refresh after Login !', 'warning');
       await axios.post('LogoutUser')
       setTimeout(() => {
@@ -35,7 +54,7 @@ export default {
       return this.cartItems.reduce(
         (sum, item) => sum + Number(item.price), 0,
       );
-    }
+    },
   },
   methods: {
     async removeCartItem(event) {
@@ -58,29 +77,22 @@ export default {
       if (!user) {
         Swal.fire('Warning!', 'You Are Not Logged In', 'warning');
       } else {
-        const options = {
-          key: 'rzp_test_aKxXbow3dV5kaK',
-          amount: this.totalPrice * 100, // Amount in paise (e.g., 10000 paise = INR 100)
-          currency: 'INR',
-          name: 'twentyss',
-          description: 'Payment for Purchase',
-          image: '/logo.png', // URL of your logo
-          order_id: 1, // Unique order ID generated from your server
-          handler: function (response) {
-            // Handle the payment success response here
-            console.log(response);
-          },
-          prefill: {
-            name: this.$store.state.user.username,
-            email: this.$store.state.user.email,
-            contact: this.$store.state.user.contactNum,
-          },
-        }
-        const razorpay = new window.Razorpay(options);
-        razorpay.open();
+        await axios.post('purchase_Order',this.Purchase_Details)
+        .then((data) => {
+				this.alerts=data.data.msg
+				if (data.data.status) {
+					Swal.fire('Success!',this.alerts, 'success');
+						this.cartItems=data.data.cartItems
+					}else{
+						Swal.fire('Warning!','Technical Error Please Try after SomeTime','warning');
+					}
+				}).catch((e) => {
+					console.log(e);
+					Swal.fire('Error!', 'Data Collapsed/Could not connect server', 'error');
+				})
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -114,8 +126,9 @@ export default {
                 <p class="mb-2 fw-bold">RS:- {{ totalPrice }} </p>
               </div>
               <div class="mt-3">
-                <a class="btn btn-warning w-100 shadow-0 mb-2" @click="CreateOrder"> Make Purchase </a>
-                <!-- <a class="btn btn-warning w-100 shadow-0 mb-2" href="https://wa.me/message/YBNVGLOCOPMYF1">Purchase inwhastapp </a> -->
+                <form class="form-group"  @submit.prevent="CreateOrder" name="tab-tracker-form" autocomplete="off">
+                  <button type="submit" class="btn btn-Success w-100 shadow-0 mb-2"> Make Purchase </button>
+                </form>
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>
             </div>

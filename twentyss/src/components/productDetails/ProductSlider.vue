@@ -10,12 +10,12 @@ export default {
         <div class="product-d-slide">
             <div class="container">
                 <div class="row p-3">
-                    <div class="col-md-6 col-6">
+                    <div class="col-md-6 col-12">
                         <div class="banner-image shadow ">
                             <img :src="product.imageUrl" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6 col-6">
+                    <div class="col-md-6 col-12">
                         <div class="banner-image shadow ">
                             <img :src="product.imageUrl2" alt="">
                         </div>
@@ -36,7 +36,7 @@ export default {
     text-align: center;
     transition: all .8s ease;
 }
-.product-d-slide,.banner-image{
+.banner-image{
     border-radius: 12px;
 }
 img {
@@ -44,13 +44,13 @@ img {
     object-fit: fill;
     width: 100%;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
     transition: all .8s ease;
 }
 
 @media screen and (max-width: 620px) {
     img {
-        height: 20vh;
+        height: 35vh;
+        margin-top: 2vh;
     }
 }
 </style>
