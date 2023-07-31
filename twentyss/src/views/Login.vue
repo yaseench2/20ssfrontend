@@ -1,14 +1,14 @@
 <script>
-import LoginGrid from '../components/entry/LoginGrid.vue'
+import logingrid from '../components/entry/LoginPage.vue'
 export default {
 	name: 'Login',
 	components:{
-		LoginGrid
+		logingrid
 	}
 }
 </script>
 
 
 <template>
-<LoginGrid/>
+<logingrid/>
 </template>

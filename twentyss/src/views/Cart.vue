@@ -55,6 +55,9 @@ export default {
         (sum, item) => sum + Number(item.price), 0,
       );
     },
+    discount(){
+      return this.cartItems.reduce((sum,item)=>sum + Number(item.cutPrice),0)
+    }
   },
   methods: {
     async removeCartItem(event) {
@@ -110,11 +113,11 @@ export default {
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <p class="mb-2">Total price:</p>
-                <p class="mb-2">Rs:- {{ totalPrice }}</p>
+                <p class="mb-2 text-success">Rs:- {{ totalPrice }}</p>
               </div>
               <div class="d-flex justify-content-between">
                 <p class="mb-2">Discount:</p>
-                <p class="mb-2 text-success">Rs:- -60.00</p>
+                <p class="mb-2 text-warning">Rs:- {{ discount - totalPrice }}</p>
               </div>
               <div class="d-flex justify-content-between">
                 <p class="mb-2">TAX:</p>
@@ -127,7 +130,7 @@ export default {
               </div>
               <div class="mt-3">
                 <form class="form-group"  @submit.prevent="CreateOrder" name="tab-tracker-form" autocomplete="off">
-                  <button type="submit" class="btn btn-Success w-100 shadow-0 mb-2"> Make Purchase </button>
+                  <button type="submit" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </button>
                 </form>
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useStore} from 'vuex'
 export default {
-	name: 'LoginGrid',
+	name: 'LoginPage',
 	data(){
 		return{
 			alerts:{},

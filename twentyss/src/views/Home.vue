@@ -2,23 +2,19 @@
     <div>
         <Welcome :products="Products" />
     </div>
-    <ProductList 
-    :products="Products" 
-    :Dresses="ProductsDresses"
-    :Gadgets="ProductsGadgets"
-    :Watches="ProductsWatches"
-    :Sneakers="ProductsSneakers"
-    :banner="Banner" />
+    <ProductList :products="Products" :Dresses="ProductsDresses" :Gadgets="ProductsGadgets" :Watches="ProductsWatches"
+        :Sneakers="ProductsSneakers" :banner="Banner" />
 </template>
 
 <script>
 import axios from 'axios'
 import Welcome from '../components/home/WelcomeHome.vue'
 import ProductList from '../components/home/ProductList.vue'
+import Swal from 'sweetalert2';
 
 export default {
     name: 'Home',
-    props: ['products', 'Dresses','Gadgets','Watches','Sneakers','banner'],
+    props: ['products', 'Dresses', 'Gadgets', 'Watches', 'Sneakers', 'banner'],
     components: {
         Welcome, ProductList
     },
@@ -29,7 +25,7 @@ export default {
             ProductsGadgets: [],
             ProductsWatches: [],
             ProductsSneakers: [],
-            Banner:[],
+            Banner: [],
         }
     },
 
@@ -57,7 +53,6 @@ export default {
         const resultBanner = await axios.get('banner')
         const Banner = resultBanner.data
         this.Banner = Banner
-
     },
 }
 </script>
