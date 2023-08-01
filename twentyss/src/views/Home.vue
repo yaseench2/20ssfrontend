@@ -10,7 +10,6 @@
 import axios from 'axios'
 import Welcome from '../components/home/WelcomeHome.vue'
 import ProductList from '../components/home/ProductList.vue'
-import Swal from 'sweetalert2';
 
 export default {
     name: 'Home',

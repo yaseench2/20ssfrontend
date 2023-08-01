@@ -93,8 +93,6 @@ export default {
 body {
 	width: 100%;
 	overflow-x: hidden;
-
-
 }
 
 .main-content {

@@ -1,6 +1,6 @@
 <script>
 import Navbar from '../src/components/partials/Navbar.vue';
-import Sidebar from '../src/components/partials/Sidebar.vue'
+import Sidebar from '../src/components/partials/SidebarNew.vue'
 import Foooter from '../src/components/partials/Footer.vue'
 export default {
   name: 'App',

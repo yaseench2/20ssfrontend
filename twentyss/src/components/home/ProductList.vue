@@ -32,7 +32,7 @@ export default {
         </div>
       </div>
     </div>
-  <div class="container ">
+  <div class="container " v-if="Gadgets!=''">
     <div class="row">
       <Gadgets v-for="product in Gadgets" :key="product.id" :product="product" />
     </div>
@@ -52,7 +52,7 @@ export default {
         </div>
       </div>
     </div>
-  <div class="container ">
+  <div class="container " v-if="Dresses!=''">
     <div class="row">
       <Dress v-for="product in Dresses" :key="product.id" :product="product" />
     </div>
@@ -74,7 +74,7 @@ export default {
         </div>
       </div>
     </div>
-  <div class="container ">
+  <div class="container " v-if="Watches!=''">
     <div class="row">
       <Watches v-for="product in Watches" :key="product.id" :product="product" />
     </div>
@@ -94,7 +94,7 @@ export default {
         </div>
       </div>
     </div>
-  <div class="container ">
+  <div class="container " v-if="Sneakers!=''">
     <div class="row">
       <Sneakers v-for="product in Sneakers" :key="product.id" :product="product" />
     </div>

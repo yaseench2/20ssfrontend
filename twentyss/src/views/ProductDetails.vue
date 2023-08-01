@@ -41,7 +41,7 @@ export default {
 }
 </script>
 <template>
-    <div v-if="Product" >
+    <div v-if="Product" class="mt-2">
         <ProductDetailsGrid :products="Product" />
     </div>
     <div v-else>

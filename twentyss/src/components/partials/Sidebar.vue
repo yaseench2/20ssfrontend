@@ -112,6 +112,8 @@ export default {
 </template>
 
 <style scoped>
+
+
 .sidebar {
   height: 100%;
   width: 17%;
@@ -325,8 +327,8 @@ export default {
   .sidebar-menu>li .badge {
     display: none;
   }
-
   .sidebar {
+    display: none;
     top: auto;
     left: auto;
     border-radius: 0px 20px;

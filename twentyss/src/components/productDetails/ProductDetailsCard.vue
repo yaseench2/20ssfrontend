@@ -38,6 +38,25 @@ export default {
             const result = await axios.get(`cart/user/${userId}`)
             const product = result.data
             this.cartItem = product
+
+            const meta = useMeta();
+            meta.value.title = this.product.pName;
+            meta.value.metaTags.push({
+                property: 'og:title',
+                content: this.product.pName,
+            });
+            meta.value.metaTags.push({
+                property: 'og:description',
+                content: this.product.disc,
+            });
+            meta.value.metaTags.push({
+                property: 'og:image',
+                content: this.product.imageUrl,
+            });
+            meta.value.metaTags.push({
+                property: 'og:url',
+                content: window.location.href, // or provide a dynamic URL to the product page
+            });
         }
 
     },
