@@ -327,7 +327,8 @@ export default {
   }
 
   .sidebar {
-    top: 5%;
+    top: auto;
+    left: auto;
     border-radius: 0px 20px;
     width: 13%;
   }

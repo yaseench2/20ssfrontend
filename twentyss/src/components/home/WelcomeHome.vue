@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <div class="container ">
+  <div class="container" v-if="products!=''">
     <div class="row">
       <div class="col-md-4 col-4" v-for="x in products" :key="x.id">
         <div class="wrapper">

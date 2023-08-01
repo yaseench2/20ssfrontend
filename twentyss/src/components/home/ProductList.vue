@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <div class="row pt-3">
+  <div class="row pt-3" v-if="Gadgets!=''">
       <div class="col-md-6 col-7">
         <div class="section-title text-light">
             <h3>Gadgets</h3>
@@ -38,7 +38,7 @@ export default {
     </div>
   </div>
 
-  <div class="row pt-3">
+  <div class="row pt-3" v-if="Dresses!=''">
       <div class="col-md-6 col-7">
         <div class="section-title text-light">
             <h3>Dress</h3>
@@ -60,7 +60,7 @@ export default {
 
   <Banner v-for="bannerImage in banner" :key="bannerImage.id" :bannerImage="bannerImage"/>
 
-  <div class="row pt-3">
+  <div class="row pt-3" v-if="Watches!=''">
       <div class="col-md-6 col-7">
         <div class="section-title text-light">
             <h3>Watch</h3>
@@ -80,7 +80,7 @@ export default {
     </div>
   </div>
 
-  <div class="row pt-3">
+  <div class="row pt-3" v-if="Sneakers!=''">
       <div class="col-md-6 col-7">
         <div class="section-title text-light">
             <h3>Sneakers</h3>
