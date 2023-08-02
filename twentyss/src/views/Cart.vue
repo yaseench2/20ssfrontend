@@ -20,6 +20,7 @@ export default {
         username:"",
         place:"",
         pincode:"",
+        total_Price:""
       },
     }
   },
@@ -40,6 +41,7 @@ export default {
       this.Purchase_Details.username=this.userData.username
       this.Purchase_Details.pincode=this.userData.pinCode
       this.Purchase_Details.place=this.userData.place
+      this.Purchase_Details.total_Price=this.totalPrice
     } else {
       this.userData=""
       Swal.fire('warning!', 'Please donot refresh after Login !', 'warning');
