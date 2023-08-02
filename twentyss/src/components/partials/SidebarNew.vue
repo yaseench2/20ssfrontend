@@ -221,19 +221,16 @@ export default {
     #content {
         width: 100%;
         margin: 0;
-        top: 0;
     }
 
     #sidebarCollapse {
         display: block;
         z-index: 2;
         position: fixed;
-        top: 0;
     }
     #content.active {
         margin-left: 14rem;
         width: calc(100% - 17rem);
         transition: all 0.4s;
-        top: 0;
     }
 }</style>
