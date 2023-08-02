@@ -29,6 +29,9 @@ export const store = createStore({
     actions:{
         setToken({commit}, token){
             commit('setToken',token)
+            setTimeout(() => {
+                commit('setUntoken');
+            }, 60 * 60 * 1000)
         },
         setUser({commit}, user){
             commit('setUser',user)
