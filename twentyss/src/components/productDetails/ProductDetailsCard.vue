@@ -38,25 +38,6 @@ export default {
             const result = await axios.get(`cart/user/${userId}`)
             const product = result.data
             this.cartItem = product
-
-            const meta = useMeta();
-            meta.value.title = this.product.pName;
-            meta.value.metaTags.push({
-                property: 'og:title',
-                content: this.product.pName,
-            });
-            meta.value.metaTags.push({
-                property: 'og:description',
-                content: this.product.disc,
-            });
-            meta.value.metaTags.push({
-                property: 'og:image',
-                content: this.product.imageUrl,
-            });
-            meta.value.metaTags.push({
-                property: 'og:url',
-                content: window.location.href, // or provide a dynamic URL to the product page
-            });
         }
 
     },
@@ -128,7 +109,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary shadow-0" v-if="!itemInCart" @click="AddtoCart()"> <i
+            <button class="btn facilitatorSubmitBtn shadow-0" v-if="!itemInCart" @click="AddtoCart()"> <i
                     class="me-1 fa fa-shopping-cart"></i> Add to cart</button>
             <button class="btn btn-secondary shadow-0" v-if="itemInCart"> <i class="me-1 fa fa-shopping-cart"></i> Already
                 In The Cart</button>
@@ -136,6 +117,20 @@ export default {
     </main>
 </template>
 <style scoped>
+
+.facilitatorSubmitBtn {
+	width: 100%;
+	color: rgb(0, 0, 0);
+	border: 1px solid #000000;
+	font-family: Montserrat;
+}
+
+.facilitatorSubmitBtn:hover {
+	background-color: #000000;
+	color: rgb(255, 255, 255);
+	box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.099), 0 1px 50px 0 rgba(0, 0, 0, 0.099);
+}
+
 @media screen and (max-width: 620px) {
     main {
         text-align: right;

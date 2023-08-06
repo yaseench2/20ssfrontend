@@ -126,13 +126,13 @@ export default {
 }
 
 .company__info {
-	background-color: #0d7170;
+	background-color: #ffffff;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	color: #fff;
+	color: #000000;
 }
 
 .company__logo {
@@ -141,7 +141,7 @@ export default {
 
 .company_title {
 	font-family: 'Leckerli One', cursive;
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 640px) {
@@ -161,11 +161,11 @@ export default {
 }
 
 .row>h2 {
-	color: #008080;
+	color: #ffffff;
 }
 
 .login_form {
-	background-color: #fff;
+	background-color: #000000;
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 	border-top: 1px solid #ccc;
@@ -192,7 +192,7 @@ form {
 .form__input {
 	width: 100%;
 	border: 0px solid transparent;
-	border-radius: 0;
+	border-radius: 20px;
 	border-bottom: 1px solid #aaa;
 	padding: 1em .5em .5em;
 	padding-left: 1em;
@@ -221,13 +221,14 @@ form {
 
 .facilitatorSubmitBtn {
 	width: 100%;
-	color: black;
+	color: rgb(255, 255, 255);
 	border: 1px solid #008080;
 	font-family: Montserrat;
 }
 
 .facilitatorSubmitBtn:hover {
-	background-color: #008080;
+	background-color: #ffffff;
+	color: #000;
 	box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.099), 0 1px 50px 0 rgba(0, 0, 0, 0.099);
 }
 

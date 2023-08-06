@@ -30,7 +30,7 @@ export default {
 .container {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(0, 135, 112, 0.639);
+    background-color: black;
     border-radius: 12px;
     border: 1px solid rgba(255, 0, 0, 0.125);
     text-align: center;

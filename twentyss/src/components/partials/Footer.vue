@@ -71,7 +71,7 @@ a:focus {
 }
 
 footer {
-  background: #222d32;
+  background: #191919;
 }
 
 @media screen and (max-width: 620px) {

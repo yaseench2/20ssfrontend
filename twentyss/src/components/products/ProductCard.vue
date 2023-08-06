@@ -6,25 +6,17 @@ export default {
 </script>
 
 <template>
-    <div class="col-lg-4 col-md-4 col-6 mb-3" v-for="product in products" :key="product.id" >
-        <div class="card d-flex flex-column align-items-center" >
-            <div class="product-name mt-1" >
-                <h5>{{ product.pName }}</h5>
-            </div>
-            <router-link :to="'/product_details/' + product.id + '/' + product.pName">
-                <div class="card-img">
-                    <img :src="product.imageUrl" alt="" height="100" id="shirt">
-                </div>
-            </router-link>
-            <div v-if="product.pitem != 'Watch' && product.pitem != 'Gadgets'">
-                Sizes :<div class="text-muted text-center p-1 d-inline mt-auto" v-for="size in product.size" :key="size">{{ size}}</div>
-            </div>
-            <div class="card-body pt-0">
-                <div class="text-dark text-center mt-auto">Item:{{ product.pitem }}</div>
-                <div class="text-muted text-center discrption mt-auto">Disciption:{{ product.disc }}</div>
-                <div class="d-flex align-items-center price">
-                    <div class="del mr-2"><span class="text-danger"><del>{{ product.cutPrice }}</del></span></div>
-                    <div class="font-weight-bold">{{ product.price }}</div>
+    <div class="row text-center mb-4 p-2">
+        <div class="col-md-4 col-12 mt-3" v-for="product in products" :key="product.id">
+            <div class="card shadow">
+                <router-link :to="'/product_details/' + product.id + '/' + product.pName">
+                    <div class="imgBox">
+                        <img :src="product.imageUrl" class="mouse">
+                    </div>
+                </router-link>
+                <div class="contentBox">
+                    <h3>{{ product.pName }}</h3>
+                    <h2 class="price">RS:{{ product.price }}</h2>
                 </div>
             </div>
         </div>
@@ -33,144 +25,82 @@ export default {
 
 <style scoped>
 .card {
-    cursor: pointer;
-    transition: .3s all ease-in-out;
-    height: auto;
-    width: auto;
-    border-radius: 10px;
-}
-
-.card:hover {
-    box-shadow: 2px 2px 15px #fd9a6ce5;
-    transform: scale(1.02)
-}
-
-.card .product-name {
-    font-weight: 500
-}
-
-
-.card .text-muted {
-    font-size: 0.82rem
-}
-
-.card-img img {
-    width: inherit;
-    height: 180px;
-    object-fit: fill;
-    display: block;
-}
-
-.card-body .btn-group .btn {
-    padding: 0;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    border-radius: 50%;
-    position: relative
-}
-
-.card-body .btn-group>.btn-group:not(:last-child)>.btn,
-.card-body .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
-    border-radius: 50%;
-    transition: ease-in all .4s
-}
-
-.card-body input[type="radio"] {
-    visibility: hidden
-}
-
-.card-body .btn:not(:disabled):not(.disabled).active::after,
-.card-body .btn:not(:disabled):not(.disabled):active::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    top: 4px;
-    left: 4.2px;
-    background-color: #fff;
-    position: absolute;
-    transition: ease-in all .4s
-}
-
-.card-body .btn.btn-light:not(:disabled):not(.disabled).active::after,
-.card-body .btn.btn-light:not(:disabled):not(.disabled):active::after {
-    background-color: #000
-}
-
-#avail-size input[type="checkbox"] {
-    visibility: hidden
-}
-
-#avail-size input[type='checkbox']:checked {
-    background-color: #16c79a;
-    border: none
-}
-
-#avail-size .btn.btn-success {
-    background-color: #ddd;
-    color: #333;
-    border: none;
-    width: 20px;
-    font-size: 0.7rem;
-    border-radius: 0;
-    padding: 0
-}
-
-#avail-size .btn.btn-success:hover {
-    background-color: #aff1e1;
-    color: #444
-}
-
-#avail-size .btn-success:not(:disabled):not(.disabled).active,
-#avail-size .btn-success:not(:disabled):not(.disabled):active {
-    background-color: #16c79a;
-    color: #fff
-}
-
-#avail-size label {
-    margin: 10px;
-    margin-left: 0px
-}
-
-#shirt {
-    height: 170px
-}
-
-.middle {
     position: relative;
     width: 100%;
-    margin-top: 25px
+    height: auto;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
 }
 
-@media(max-width:1199.5px) {
-    .card {
-        height: auto;
-        width:100%;
-    }
-
-    .price {
-        font-size: 0.9rem
-    }
-
-    .product-name {
-        font-size: 0.8rem
-    }
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transform: skewY(345deg);
+    transition: 0.5s;
 }
 
-@media(max-width: 991.5px) {
-    .card {
-        text-align: center;
-        height: auto;
-        border-radius: 10px;
-    }
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
 
-    .price {
-        font-size: 0.85rem
-    }
+.card::after {
+    content: "20SS";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.29);
+}
 
-    .discrption {
-        display: none;
-    }
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.card .imgBox img {
+    border-radius: 20px;
+    max-width: 80%;
+    transition: .5s;
+}
+
+
+.card:hover .imgBox img {
+    max-width: 100%;
+}
+
+.card .contentBox {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.card .contentBox h3 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 </style>

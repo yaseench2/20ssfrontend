@@ -66,8 +66,7 @@ export default {
 <template>
     <div class="vertical-nav bg-white" id="sidebar">
         <div class="py-1 px-1 bg-light">
-            <div class="media d-flex align-items-center"><img src='/logo.png'
-                    alt="..." width="40" class="ml-3 img-thumbnail shadow-sm">
+            <div class="media d-flex align-items-center">
                 <div class="media-body">
                     <h5 class="m-0 ml-2">{{ UserName }}</h5>
                 </div>
@@ -78,7 +77,7 @@ export default {
             <li class="nav-item" for="home">
                 <router-link to="/home" id="home" class="text-decoration-none">
                 <a  class="nav-link text-dark font-italic bg-light">
-                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-th-large mr-3 text-dark fa-fw"></i>
                     Home
                 </a>
                 </router-link>
@@ -86,7 +85,7 @@ export default {
             <li class="nav-item" v-if="$store.state.isLoggedIn">
                 <router-link to="/profile" id="profile" class="text-decoration-none">
                 <a  class="nav-link text-dark font-italic">
-                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-address-card mr-3 text-dark fa-fw"></i>
                     Profile
                 </a>
             </router-link>
@@ -94,7 +93,7 @@ export default {
             <li class="nav-item">
                 <router-link to="" @click="UserCart()" id="cart" class="text-decoration-none">
                 <a  class="nav-link text-dark font-italic">
-                    <i class="fa fa-shopping-cart mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-shopping-cart mr-3 text-dark fa-fw"></i>
                     Shopping Cart
                 </a>
             </router-link>
@@ -102,7 +101,7 @@ export default {
             <li class="nav-item">
                 <router-link to="/allGadgets"   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-camera-retro mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-camera-retro mr-3 text-dark fa-fw"></i>
                     Gadgets
                 </a>
             </router-link>
@@ -110,7 +109,7 @@ export default {
             <li class="nav-item">
                 <router-link to="/allDressess"   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-female mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-female mr-3 text-dark fa-fw"></i>
                     Dresses
                 </a>
             </router-link>
@@ -118,7 +117,7 @@ export default {
             <li class="nav-item">
                 <router-link to="/allSneakers"   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-paw mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-paw mr-3 text-dark fa-fw"></i>
                     Sneakers
                 </a>
             </router-link>
@@ -126,7 +125,7 @@ export default {
             <li class="nav-item">
                 <router-link to="/allWatches"   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-clock-o mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-clock-o mr-3 text-dark fa-fw"></i>
                     Watches
                 </a>
             </router-link>
@@ -134,7 +133,7 @@ export default {
             <li class="nav-item">
                 <router-link to=""   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa fa-envelope mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa fa-envelope mr-3 text-dark fa-fw"></i>
                     Web Updates
                 </a>
             </router-link>
@@ -142,7 +141,7 @@ export default {
             <li class="nav-item">
                 <router-link to=""   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa fa fa-truck mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa fa fa-truck mr-3 text-dark fa-fw"></i>
                     Delivery Tracking
                 </a>
             </router-link>
@@ -155,7 +154,7 @@ export default {
             <li class="nav-item" v-if="!$store.state.isLoggedIn">
                 <router-link to="/register"    class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-sign-in mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-sign-in mr-3 text-dark fa-fw"></i>
                     Register
                 </a>
             </router-link>
@@ -163,7 +162,7 @@ export default {
             <li class="nav-item" v-if="!$store.state.isLoggedIn">
                 <router-link to="/login" class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-sign-out mr-3 text-dark fa-fw"></i>
                     Login
                 </a>
             </router-link>
@@ -171,7 +170,7 @@ export default {
             <li class="nav-item">
                 <router-link to="/login" class="text-decoration-none" @click="LogoutUser()">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa-power-off mr-3 text-primary fa-fw"></i>
+                    <i class="fa fa-power-off mr-3 text-dark fa-fw"></i>
                     Log Out
                 </a>
             </router-link>
@@ -185,6 +184,7 @@ export default {
     </div>
 </template>
 <style scoped>
+
 #sidebarCollapse {
     display: none;
 }
