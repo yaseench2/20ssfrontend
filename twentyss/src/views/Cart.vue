@@ -106,9 +106,6 @@ export default {
     <div class=" container">
       <div class="row">
         <CartGrid :cartItem="cartItems" v-on:removeFromCart="removeCartItem($event)" v-if="cartItems.length > 0" />
-        <div v-else class="emptyDiv shadow">
-          <p class="p-5">Cart Is Empty<span class="fa fa-warning"></span></p>
-        </div>
         <div class="col-lg-3 mt-3">
           <Coupon />
           <div class="card shadow-0 border">
@@ -122,8 +119,8 @@ export default {
                 <p class="mb-2 text-warning">Rs:- {{ discount - totalPrice }}</p>
               </div>
               <div class="d-flex justify-content-between">
-                <p class="mb-2">TAX:</p>
-                <p class="mb-2">Rs:- 14.00</p>
+                <p class="mb-2">Gst:</p>
+                <p class="mb-2">Rs:- 0.00</p>
               </div>
               <hr />
               <div class="d-flex justify-content-between">
@@ -132,7 +129,8 @@ export default {
               </div>
               <div class="mt-3">
                 <form class="form-group"  @submit.prevent="CreateOrder" name="tab-tracker-form" autocomplete="off">
-                  <button type="submit" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </button>
+                  <button type="submit" class="btn btn-dark w-100 shadow-0 mb-2" v-if="cartItems.length!=0"> Make Purchase </button>
+                  <button type="button" class="btn btn-warning w-100 shadow-0 mb-2" v-else> Cart Is Empty </button>
                 </form>
                 <router-link to="/home" id="home" class="btn btn-light w-100 border mt-2"> Back to home </router-link>
               </div>

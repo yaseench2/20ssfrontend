@@ -57,7 +57,7 @@ export default {
             </h4>
             <div class=" my-2">
                 <span class="text-muted"><i class="fa fa-shopping-basket fa-sm mx-1"></i></span>
-                <span class="text-success">In stock</span>
+                <span class="text-success" >In stock</span>
             </div>
 
             <div class="mb-3">
@@ -109,17 +109,16 @@ export default {
                     </div>
                 </div>
             </div>
-            <button class="btn facilitatorSubmitBtn shadow-0" v-if="!itemInCart" @click="AddtoCart()"> <i
-                    class="me-1 fa fa-shopping-cart"></i> Add to cart</button>
-            <button class="btn btn-secondary shadow-0" v-if="itemInCart"> <i class="me-1 fa fa-shopping-cart"></i> Already
-                In The Cart</button>
+            <button class="btn facilitatorSubmitBtn shadow" v-if="!itemInCart" @click="AddtoCart()"> <i
+                    class="me-1 fa fa-plus"></i><i class="discText">Add To Cart</i> <i class="fa fa-shopping-cart"></i></button>
+            <button class="btn facilitatorSubmitBtn text-success" v-if="itemInCart"> <i class="me-1 fa fa-check"></i><i class="discText">Already In Cart</i>  <i class="fa fa-shopping-cart"></i></button>
         </div>
     </main>
 </template>
 <style scoped>
 
 .facilitatorSubmitBtn {
-	width: 100%;
+	width: 50%;
 	color: rgb(0, 0, 0);
 	border: 1px solid #000000;
 	font-family: Montserrat;
@@ -128,6 +127,7 @@ export default {
 .facilitatorSubmitBtn:hover {
 	background-color: #000000;
 	color: rgb(255, 255, 255);
+    
 	box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.099), 0 1px 50px 0 rgba(0, 0, 0, 0.099);
 }
 

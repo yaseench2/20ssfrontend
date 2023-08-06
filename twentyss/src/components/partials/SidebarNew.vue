@@ -65,14 +65,7 @@ export default {
 </script>
 <template>
     <div class="vertical-nav bg-white" id="sidebar">
-        <div class="py-1 px-1 bg-light">
-            <div class="media d-flex align-items-center">
-                <div class="media-body">
-                    <h5 class="m-0 ml-2">{{ UserName }}</h5>
-                </div>
-            </div>
-        </div>
-        <p class="text-gray font-weight-bold text-uppercase px-1 smallmb-0 mt-2" style="font-family: 'Leckerli One', cursive;">Twentyss</p>
+        <p class="text-gray font-weight-bold text-uppercase px-1 smallmb-0 mt-5" style="font-family: 'Leckerli One', cursive;">Twentyss</p>
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item" for="home">
                 <router-link to="/home" id="home" class="text-decoration-none">
@@ -86,7 +79,7 @@ export default {
                 <router-link to="/profile" id="profile" class="text-decoration-none">
                 <a  class="nav-link text-dark font-italic">
                     <i class="fa fa-address-card mr-3 text-dark fa-fw"></i>
-                    Profile
+                    {{ UserName }} Profile
                 </a>
             </router-link>
             </li>
@@ -193,7 +186,7 @@ export default {
     min-width: 13rem;
     width: 13.5rem;
     height: 100vh;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     left: 0;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);

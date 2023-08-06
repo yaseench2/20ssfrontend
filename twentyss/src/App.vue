@@ -15,12 +15,12 @@ export default {
 }
 </script>
 <template>
-  <Navbar />
   <div class="row">
     <div class="col-md-2">
       <Sidebar />
     </div>
     <div class="col-md-10">
+      <Navbar />
       <main>
         <router-view />
       </main>

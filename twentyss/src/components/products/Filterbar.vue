@@ -18,7 +18,7 @@ let tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
         <div class="ml-auto mt-3 mr-2">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <h4 class="text-success">{{ ItemUrl }}</h4>
+                    <h4 class="text-dark">{{ ItemUrl }}</h4>
                 </ul>
             </nav>
         </div>

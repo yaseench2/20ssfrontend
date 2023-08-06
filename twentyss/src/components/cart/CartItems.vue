@@ -55,7 +55,7 @@ export default{
 <style scoped>
 .icon-hover-danger:hover {
   border-color: #dc4c64 !important;
-  background-color: rgb(255, 0, 0) !important;
+  background-color: rgb(0, 0, 0) !important;
 }
 
 .icon-hover-danger:hover i {

@@ -13,7 +13,7 @@ export default{
     <div class="col-lg-9">
         <div class="card border shadow">
             <div class="m-4">
-                <h4 class="card-title mb-4 text-success text-center">Shopping Cart</h4>
+                <h4 class="card-title mb-4 text-dark text-center">Shopping Cart</h4>
                 <CartItems :products="cartItem" v-on:removeCart="$emit('removeFromCart',$event)" />
                 <div class="border-top pt-4 mx-4 mb-4">
                     <p><i class="fa fa-truck text-muted fa-lg"></i> Free Delivery within 1-2 weeks</p>

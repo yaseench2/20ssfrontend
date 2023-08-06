@@ -12,7 +12,7 @@ export default {
                 <h2>Best Sales</h2>
             </div>
             <div class="content">
-                <a href=""><img :src="bannerImage.imageUrl" alt=""></a>
+                <img :src="bannerImage.imageUrl" alt="">
             </div>
         </div>
     </div>
