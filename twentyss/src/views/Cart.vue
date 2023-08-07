@@ -155,4 +155,7 @@ export default {
   color: rgb(211, 77, 77);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.btn{
+  border-radius: 2.10rem
+}
 </style>

@@ -33,7 +33,7 @@ export default {
     background-color: #fff;
     background-clip: border-box;
     border: 0 solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
+    border-radius: 2.15rem;
 }
 
 .card-body {

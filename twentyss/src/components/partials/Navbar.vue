@@ -15,11 +15,10 @@ export default {
 .navbar-logo {
 	height: 35px;
 }
-.navbar {
-	height: 6vh;
-}
+
 #home {
 	font-family: 'Leckerli One', cursive;
 	color: black;
+	font-size: 4vh;
 }
 </style>

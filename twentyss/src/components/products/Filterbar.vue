@@ -128,7 +128,7 @@ let tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
 
 button.btn.btn-hide {
     height: inherit;
-    background-color: #ff935d;
+    background-color: #000000;
     color: #fff;
     font-size: 0.82rem;
     padding-left: 40px;
@@ -172,7 +172,7 @@ button.btn.btn-hide {
 }
 
 .pagination .page-item .page-link {
-    color: #333;
+    color: #000000;
     border: none;
     width: 40px;
     text-align: center

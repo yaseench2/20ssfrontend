@@ -1,11 +1,12 @@
 <script>
 import ProfileImageCard from './ProfileImageCard.vue';
 import ProfileDetailsEdit from './ProfileDetailsEdit.vue';
+import Tracking from './OrderTracking.vue'
 export default{
     name:'ProductGrid',
 	props:['userDetails','userData'],
     components:{
-        ProfileDetailsEdit,ProfileImageCard
+        ProfileDetailsEdit,ProfileImageCard,Tracking
     }
 }
 </script>
@@ -19,7 +20,7 @@ export default{
 				</div>
 				<ProfileDetailsEdit :userData="userDetails"/>
 			</div>
-
+			<Tracking/>
 		</div>
 	</div>
 </template>

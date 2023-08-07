@@ -7,8 +7,8 @@
                         <h1 class="display-4">About us</h1>
                         <p class="lead text-muted mb-0">Welcome to our 20SS online store!</p>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block"><img
-                            src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" class="img-fluid"></div>
+                    <div class="col-lg-6 d-none d-lg-block "><img
+                            src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" class="img-fluid "></div>
                 </div>
             </div>
         </div>
@@ -22,9 +22,9 @@
                             also feels comfortable to wear. We believe that every person should have access to great denim,
                             which is why we offer a wide range of styles and sizes to cater to every body type.</p>
                     </div>
-                    <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img
+                    <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2 "><img
                             src="https://bootstrapious.com/i/snippets/sn-about/img-1.jpg" alt=""
-                            class="img-fluid mb-4 mb-lg-0"></div>
+                            class="img-fluid mb-4 mb-lg-0 "></div>
                 </div>
                 <div class="row align-items-center">
                     <div class="col-lg-5 px-5 mx-auto"><img src="/shop.png" alt="" class="img-fluid mb-4 mb-lg-0">

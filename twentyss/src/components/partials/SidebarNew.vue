@@ -132,10 +132,10 @@ export default {
             </router-link>
             </li>
             <li class="nav-item">
-                <router-link to=""   class="text-decoration-none">
+                <router-link to="/about"   class="text-decoration-none">
                 <a href="#" class="nav-link text-dark font-italic">
-                    <i class="fa fa fa fa-truck mr-3 text-dark fa-fw"></i>
-                    Delivery Tracking
+                    <i class="fa fa fa fa-phone mr-3 text-dark fa-fw"></i>
+                    About Us
                 </a>
             </router-link>
             </li>

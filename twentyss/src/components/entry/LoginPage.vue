@@ -201,8 +201,9 @@ form {
 .facilitatorSubmitBtn {
 	width: 100%;
 	color: rgb(255, 255, 255);
-	border: 1px solid #008080;
+	border: 1px solid #ffffff;
 	font-family: Montserrat;
+	border-radius: 2.10rem
 }
 
 .facilitatorSubmitBtn:hover {

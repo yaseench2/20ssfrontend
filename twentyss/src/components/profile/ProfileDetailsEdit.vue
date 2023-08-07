@@ -56,7 +56,7 @@ export default {
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="">
-                            <a href="" class="btn btn-info" data-toggle="modal" data-target="#ProfileEditForm">Edit</a>
+                            <a href="" class="btn btn-dark p-2" data-toggle="modal" data-target="#ProfileEditForm">Edit</a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ export default {
                             <div class="row">
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="button" class="btn btn-primary px-4" value="Save Changes">
+                                    <input type="button" class="btn btn-dark px-4" value="Save Changes">
                                 </div>
                             </div>
                         </div>
@@ -139,76 +139,6 @@ export default {
                 </div>
             </div>
         </div>
-
-        <div class="row gutters-sm d-none">
-            <div class="col-sm-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h6 class="d-flex align-items-center mb-3"><i
-                                class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                        <small>Web Design</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Website Markup</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>One Page</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h6 class="d-flex align-items-center mb-3"><i
-                                class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                        <small>Web Design</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Website Markup</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>One Page</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div class="progress mb-3" style="height: 5px">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
 
     </div>
@@ -227,7 +157,7 @@ export default {
     background-color: #fff;
     background-clip: border-box;
     border: 0 solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
+    border-radius: 2.15rem;
 }
 
 .card-body {
@@ -239,6 +169,9 @@ export default {
 .gutters-sm {
     margin-right: -8px;
     margin-left: -8px;
+}
+.btn-dark{
+    border-radius: 2.10rem
 }
 
 .gutters-sm>.col,

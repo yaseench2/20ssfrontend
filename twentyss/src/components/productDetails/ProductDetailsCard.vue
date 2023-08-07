@@ -122,6 +122,7 @@ export default {
 	color: rgb(0, 0, 0);
 	border: 1px solid #000000;
 	font-family: Montserrat;
+    border-radius: 2.10rem
 }
 
 .facilitatorSubmitBtn:hover {

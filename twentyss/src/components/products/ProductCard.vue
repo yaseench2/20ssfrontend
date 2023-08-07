@@ -7,7 +7,7 @@ export default {
 
 <template>
     <div class="row text-center mb-4 p-2">
-        <div class="col-md-4 col-12 mt-3" v-for="product in products" :key="product.id">
+        <div class="col-md-4 col-6 mt-3" v-for="product in products" :key="product.id">
             <div class="card shadow">
                 <router-link :to="'/product_details/' + product.id + '/' + product.pName">
                     <div class="imgBox">
