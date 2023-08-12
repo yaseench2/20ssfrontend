@@ -2,10 +2,11 @@
 import Navbar from '../src/components/partials/Navbar.vue';
 import Sidebar from '../src/components/partials/SidebarNew.vue'
 import Foooter from '../src/components/partials/Footer.vue'
+import Social from './components/partials/Social.vue';
 export default {
   name: 'App',
   components: {
-    Navbar, Sidebar, Foooter
+    Navbar, Sidebar, Foooter,Social
   },
   async created() {
     window.onbeforeunload =function () {
@@ -27,4 +28,5 @@ export default {
       <Foooter />
     </div>
   </div>
+  <Social/>
 </template>

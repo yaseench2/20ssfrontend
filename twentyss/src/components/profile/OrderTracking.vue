@@ -25,7 +25,7 @@ export default {
                             Picked by courier</span> </div>
                     <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the
                             way </span> </div>
-                    <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Ready for
+                    <div class="step"> <span class="icon"> <i class="fa fa-check-square-o"></i> </span> <span class="text">Ready for
                             pickup</span> </div>
                 </div>
                 <hr>
