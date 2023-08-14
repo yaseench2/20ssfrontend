@@ -155,11 +155,10 @@ h1, h2, h3, h4, h5, h6
 .contact_info
 {
     width: 100%;
-    padding-top: 70px;
+    padding-top: 30px;
 }
 .contact_info_item
 {
-    width: calc((100% - 60px) / 3);
     height: 100px;
     border: solid 1px #e8e8e8;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.1);

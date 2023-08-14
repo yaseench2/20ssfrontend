@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .floating-chat {
   position: fixed;
+  z-index: 4;
   bottom: 20px;
   right: 20px;
 }
