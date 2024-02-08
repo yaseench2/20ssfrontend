@@ -1,9 +1,13 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import ProductRelated from './ProductRelated.vue'
 export default {
     name: 'ProductDetailsCard',
     props: ['product'],
+    components:{
+        ProductRelated
+    },
     data() {
         return {
             alerts: {},
@@ -27,7 +31,8 @@ export default {
                     Swal.fire('Warning!', 'Could not connect server', 'warining');
                 }
             } else {
-                Swal.fire('warning!', 'You are Not Logged In !', 'warning');
+                let productId = this.$route.params.id
+                this.$router.push({ path: `/QuikBuy/product/${productId}`});
             }
         },
     },
@@ -110,7 +115,7 @@ export default {
                 </div>
             </div>
             <button class="btn facilitatorSubmitBtn shadow" v-if="!itemInCart" @click="AddtoCart()"> <i
-                    class="me-1 fa fa-plus"></i><i class="discText">Add To Cart</i> <i class="fa fa-shopping-cart"></i></button>
+                    class="me-1 fa fa-plus"></i><i class="discText">Buy / Add To</i> <i class="fa fa-shopping-cart"></i></button>
             <button class="btn facilitatorSubmitBtn text-success" v-if="itemInCart"> <i class="me-1 fa fa-check"></i><i class="discText">Already In Cart</i>  <i class="fa fa-shopping-cart"></i></button>
         </div>
     </main>

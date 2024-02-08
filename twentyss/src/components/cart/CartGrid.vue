@@ -1,5 +1,5 @@
 <script>
-import CartItems from './CartItems.vue'
+import CartItems from './ItemsCart.vue'
 export default{
     name:'CartGrid',
     props:['products','cartItem'],

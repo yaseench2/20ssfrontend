@@ -1,8 +1,8 @@
 <script>
 import ProductDetailsCard from './ProductDetailsCard.vue';
-import ProductSlider from './ProductSlider.vue';
+import ProductSlider from './ProductImageSlider.vue';
 export default {
-    name: 'ProductDetailsGrid',
+    name: 'ProductDetailsGridPage',
     props:['products'],
     components:{
     ProductDetailsCard,

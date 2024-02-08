@@ -60,6 +60,10 @@ export default createRouter({
       component: () => import('../views/Profile.vue'),
     },
     {
+      path: '/QuikBuy/product/:productId',
+      component: () => import('../views/AddQuikBuy.vue'),
+    },
+    {
       path: '/:pathMatch(.*)*',
       component: () => import('../views/NotFound.vue'),
     },

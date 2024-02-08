@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import ProductDetailsGrid from '../components/productDetails/ProductDetailsGrid.vue';
+import ProductDetailsGrid from '../components/productDetails/ProductDetailsGrid.vue'
 import NotFoundErr from './NotFound.vue';
 export default {
     name: 'ProductDetails',

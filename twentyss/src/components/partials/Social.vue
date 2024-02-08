@@ -13,7 +13,7 @@ export default {
 
 <template>
     <div class="floating-chat">
-      <a href="https://wa.me/message/YBNVGLOCOPMYF1"><button class="chat-icon fa fa-whatsapp" @click="toggleChat">
+      <a href="https://api.whatsapp.com/send?phone=917356304598&text=20SS"><button class="chat-icon fa fa-whatsapp" @click="toggleChat">
       </button></a>
     </div>
   </template>

@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'ProductCard',
+    name: 'ProductCardPage',
     props: ['products', 'ItemUrl'],
 }
 </script>

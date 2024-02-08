@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'ProductSlider',
+    name: 'ProductImageSlider',
     props: ['product']
 }
 </script>
